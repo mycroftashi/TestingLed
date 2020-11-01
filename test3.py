@@ -1,23 +1,10 @@
-import time
 import RPi.GPIO as GPIO
-                       
-#start LED not
-   
-
-GPIO.setwarnings(False)
+import time
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(2, GPIO.OUT)
-
-state = True
-
-# endless loop, on/off for 1 second
-while True:
-    GPIO.output(2,True)
-    time.sleep(1)
-    GPIO.output(2,False)
-    time.sleep(1)
-  
-# status = GPIO.get("GPIO1")
- #       self.speak("Led is %s" % status)             
-
-
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
+print "LED on"
+GPIO.output(18,GPIO.HIGH)
+time.sleep(1)
+print "LED off"
+GPIO.output(18,GPIO.LOW)
