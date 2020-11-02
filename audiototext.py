@@ -1,17 +1,10 @@
-import speech_recognition as sr
-r=sr.Recognizer()
-m=sr.Microphone()
-try:
-    with m as source: r.adjust_for_ambient_noise(source)
-    while True:
-        with m as source: audio = r.listen(source)
-        print ("")
-        try:
-            value=r.recognize_google(audio)
-            if str is bytes:
-                result = u"{}".format(value).encode("utf-8")
-            else:
-                result  = "{}".format(value)
-                with open("outputs.txt","a") as f:
-                    f.write(result)
-                    print (result)
+import speech_recognition as sr # create the recognizer
+r = sr.Recognizer() # define the microphone
+mic = sr.Microphone(device_index=0) # record your speech
+with mic as source:
+   audio = r.listen(source) # speech recognition
+result = r.recognize_google(audio)# export the result
+with open('my_result.txt',mode ='w') as file:
+   file.write("Recognized text:")
+   file.write("\n")
+   file.write(result) print("Exporting process completed!")
