@@ -5,7 +5,6 @@ m = sr.Microphone()
 
 try:
     with m as source: r.adjust_for_ambient_noise(source)
-
         while True:
 
     with m as source: audio = r.listen(source)
