@@ -18,5 +18,7 @@ with sr.Microphone() as source:
 	try:
 		# using google speech recognition
 		print("Text: " + r.recognize_google(audio_text))
+		with open("output.txt", "a") as myfile:
+			myfile.write(r.recognize_google(audio_text))
 	except:
 		print("Sorry, I did not get that")
