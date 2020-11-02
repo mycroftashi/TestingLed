@@ -15,10 +15,3 @@ try:
                 with open("outputs.txt","a") as f:
                     f.write(result)
                     print (result)
-                    except sr.UnknownValueError:
-                    print ("")
-                    except sr.RequestError as e:
-                        print("{0}".format(e))
-                    except KeyboardInterrupt:
-                pass
-        
