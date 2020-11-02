@@ -8,4 +8,4 @@ with open('my_result.txt',mode ='w') as file:
    file.write("Recognized text:")
    file.write("\n")
    file.write(result)
-   print("Exporting process completed!")
+   print("Exporting process is completed!")
